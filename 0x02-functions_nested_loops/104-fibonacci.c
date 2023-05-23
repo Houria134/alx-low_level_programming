@@ -1,32 +1,45 @@
+
 #include <stdio.h>
+
 /**
- * main - Fibonacci sequence
- * Purpose: Print Fibonacci sequence up to a certain limit
- * Return: 0 (Success)
- */
+* main - Fibonacci <3
+* Purpose - No hardcode
+* Return: (Success)
+*/
 int main(void)
 {
-unsigned long int i;
-unsigned long int prev = 1;
-unsigned long int curr = 2;
+unsigned long int index;
+unsigned long int before = 1;
+unsigned long int after = 2;
 unsigned long int limit = 1000000000;
-unsigned long int prev1;
-unsigned long int prev2;
-unsigned long int curr1;
-unsigned long int curr2;
-printf("%lu, %lu", prev, curr);
-for (i = 3; i < 99; i++)
+unsigned long int before1;
+unsigned long int before2;
+unsigned long int after1;
+unsigned long int after2;
+
+printf("%lu", before);
+for (index = 1; index < 91; index++)
 {
-unsigned long int next = prev + curr;
-prev = curr;
-curr = next;
-prev1 = prev / limit;
-prev2 = prev % limit;
-curr1 = curr / limit;
-curr2 = curr % limit;
-printf(", %lu", curr1 + (curr2 / limit));
-printf("%lu", curr2 % limit);
+printf(", %lu", after);
+after += before;
+before = after - before;
 }
+
+before1 = (before / limit);
+before2 = (before % limit);
+after1 = (after / limit);
+after2 = (after % limit);
+
+for (index = 92; index < 99; ++index)
+{
+printf(", %lu", after1 + (after2 / limit));
+printf("%lu", after2 % limit);
+after1 = after1 + before1;
+before1 = after1 - before1;
+after2 = after2 + before2;
+before2 = after2 - before2;
+}
+
 printf("\n");
 return (0);
 }
