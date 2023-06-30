@@ -13,5 +13,5 @@ while (current != NULL)
 count++;
 current = current->next;
 }
-return count;
+return (count);
 }
