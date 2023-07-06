@@ -16,5 +16,5 @@ if (bitDifference & 1)
 flipCount++;
 bitDifference >>= 1;
 }
-return flipCount;
+return (flipCount);
 }
